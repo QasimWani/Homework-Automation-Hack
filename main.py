@@ -12,7 +12,7 @@ import re
 import pandas as pd
 
 
-"Function to load all events"
+#-->"Function to load all events"
 def duo(times):
     for c in range(0,times+1):
         time.sleep(1)
@@ -21,7 +21,7 @@ def duo(times):
         if(load_more_button.text == 'Load more'):
             load_more_button.click()
     br.find_element_by_css_selector("#planner-today-btn").click()
-"End of Function"    
+#-->"End of Function"    
     
     
 def main():
