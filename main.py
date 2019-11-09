@@ -11,6 +11,19 @@ import time
 import re
 import pandas as pd
 
+
+"Function to load all events"
+def duo(times):
+    for c in range(0,times+1):
+        time.sleep(1)
+
+        load_more_button = br.find_elements_by_css_selector(".czbXA_bGBk.bavIU_bGBk.bavIU_brAJ.bavIU_ycrn.bavIU_bNlk.bavIU_cuTS")[-1]
+        if(load_more_button.text == 'Load more'):
+            load_more_button.click()
+    br.find_element_by_css_selector("#planner-today-btn").click()
+"End of Function"    
+    
+    
 def main():
     #Critical fields for authorization of the app.
     hp = "foo_bar loves some foo" #Your Virginia Tech email Password
@@ -44,18 +57,7 @@ def main():
     allCompletedAssignments = []
 
     whenAssignment = []
-    "Function to load all events"
-    def duo(times):
-        for c in range(0,times+1):
-            time.sleep(1)
-
-            load_more_button = br.find_elements_by_css_selector(".czbXA_bGBk.bavIU_bGBk.bavIU_brAJ.bavIU_ycrn.bavIU_bNlk.bavIU_cuTS")[-1]
-            if(load_more_button.text == 'Load more'):
-                load_more_button.click()
-        br.find_element_by_css_selector("#planner-today-btn").click()
-    "End of Function"    
-
-
+    
     duo(2)
 
 
